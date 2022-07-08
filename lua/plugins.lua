@@ -48,6 +48,7 @@ packer.startup(
              use("hrsh7th/cmp-vsnip")
              use("hrsh7th/cmp-buffer")
              use("hrsh7th/cmp-nvim-lsp")
+             use("voldikss/vim-translator")
              -- use("hrsh7th/cmp-cmdline")
 			 use({
 				 "kylechui/nvim-surround",

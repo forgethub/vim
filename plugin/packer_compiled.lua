@@ -129,6 +129,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://mirror.ghproxy.com/https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-translator"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/vim-translator",
+    url = "https://mirror.ghproxy.com/https://github.com/voldikss/vim-translator"
   }
 }
 

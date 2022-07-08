@@ -13,6 +13,7 @@ function OrgImports(wait_ms)
 	end
 end
 -- 代码补全结束后自动导包
+vim.api.nvim_command('autocmd CompleteDone *.go lua OrgImports(1000)')
 vim.api.nvim_command('autocmd BufWritePre *.go lua OrgImports(1000)')
 -- 保存代码之前自动格式化
 vim.api.nvim_command('autocmd BufWritePre *.go :lua vim.lsp.buf.format()')
