@@ -40,8 +40,37 @@ packer.startup(
              use("wbthomason/packer.nvim")
              use("neovim/nvim-lspconfig")
              use("nvim-lua/plenary.nvim")
-             use("nvim-telescope/telescope.nvim")
-             use("nvim-treesitter/nvim-treesitter")
+             -- Telescope
+             use "nvim-telescope/telescope-live-grep-args.nvim"
+             use {
+                 "nvim-telescope/telescope.nvim",
+                 tag = "nvim-0.6",
+             }
+             use {
+                 'nvim-telescope/telescope-fzf-native.nvim',
+                 run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+             }
+
+             -- use {
+             --   "nvim-telescope/telescope-frecency.nvim",
+             --   requires = {"tami5/sqlite.lua"}   -- NOTE: need to install sqlite lib
+             -- }
+             use "nvim-telescope/telescope-ui-select.nvim"
+             use "nvim-telescope/telescope-rg.nvim"
+             -- use "MattesGroeger/vim-bookmarks"
+             -- use "tom-anders/telescope-vim-bookmarks.nvim"
+             use "nvim-telescope/telescope-dap.nvim"
+
+             -- Treesittetr
+             use {
+                 "nvim-treesitter/nvim-treesitter",
+                 run = ":TSUpdate",
+                 commit = "44b7c8100269161e20d585f24bce322f6dcdf8d2",
+             }
+             use {
+                 "nvim-treesitter/nvim-treesitter-textobjects",
+                 commit = "c81382328ad47c154261d1528d7c921acad5eae5",
+             } -- enhance texetobject selection
              use("preservim/nerdtree")
              use("hrsh7th/nvim-cmp")
              use("hrsh7th/cmp-path")
@@ -72,6 +101,9 @@ packer.startup(
 				 "sakhnik/nvim-gdb",
 				 run = "./install.sh"
 			 }
+             -- snippets    
+             use "L3MON4D3/LuaSnip" --snippet engine
+             use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
             if paccker_bootstrap then
                 packer.sync()
