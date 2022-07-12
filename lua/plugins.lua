@@ -58,6 +58,20 @@ packer.startup(
 					 })
 				 end
 			 })
+			 use 'ray-x/go.nvim'
+			 use 'ray-x/guihua.lua' -- recommanded if need floating window support
+			 -- Debugger
+			 use "ravenxrz/DAPInstall.nvim" -- help us install several debuggers
+			 use {
+				 "ravenxrz/nvim-dap",
+			 }
+			 use "theHamsta/nvim-dap-virtual-text"
+			 use "rcarriga/nvim-dap-ui"
+			 use { "jbyuki/one-small-step-for-vimkind", module = "osv" } -- debug any Lua code running in a Neovim instance
+			 use {
+				 "sakhnik/nvim-gdb",
+				 run = "./install.sh"
+			 }
 
             if paccker_bootstrap then
                 packer.sync()
